@@ -1,4 +1,4 @@
-name: NewAPI 自动签到
+name: NewAPI 自动签到2
 
 on:
   # 定时执行：每天 UTC 0:10 (北京时间 8:10)
