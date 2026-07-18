@@ -170,6 +170,14 @@ class NewAPICheckin:
                         self.session.headers.update({
                             'new-api-user': str(self.user_id)
                         })
+                        # 打印处理后的 quota
+                        quota = user_data.get('quota')
+                        if quota is not None:
+                            try:
+                                processed = float(quota) / 1000000 * 2
+                                print(f'[配额] 处理后配额: {processed:.2f}')
+                            except (ValueError, TypeError):
+                                pass  # 非数字类型则忽略
                     return user_data
                 else:
                     if verbose:
